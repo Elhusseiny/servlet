@@ -9,7 +9,7 @@
     </context-param>
     <servlet>
         <servlet-name>MyServlet</servlet-name>
-        <servlet-class>net.qeema.demo.MyServlet</servlet-class>
+        <servlet-class>net.qeema.demo.servlets.WelcomeServlet</servlet-class>
         <init-param>
             <param-name>logged-in-user</param-name>
             <param-value>Mohamed</param-value>
@@ -19,4 +19,27 @@
         <servlet-name>MyServlet</servlet-name>
         <url-pattern>/test</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>RegistrationServlet</servlet-name>
+        <servlet-class>net.qeema.demo.servlets.UserRegistrationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegistrationServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>DataLoadedServlet</servlet-name>
+        <servlet-class>net.qeema.demo.servlets.DataLoadedServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DataLoadedServlet</servlet-name>
+        <url-pattern>/load</url-pattern>
+    </servlet-mapping>
+
+
+
 </web-app>

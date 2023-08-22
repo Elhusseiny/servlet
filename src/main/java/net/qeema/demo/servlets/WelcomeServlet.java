@@ -28,9 +28,9 @@ public class WelcomeServlet extends HttpServlet {
         out.println("<br>");
         out.println("current logged in user is " + loggedInUser + " and time is " + LocalDateTime.now());
         out.println("<br>");
-        out.println("author name is " + authorName );
+        out.println("website owner is " + authorName );
         out.println("<br>");
-        out.println("<a href='/demo/reg.html'> register a new user </a>");
+        out.println("<a href=" + req.getContextPath() + "/reg.html> register a new user </a>");
         out.println("</body>");
         out.println("</html>");
     }

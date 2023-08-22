@@ -19,8 +19,10 @@ public class DataLoadedServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         //List<UserDTO> userDTOs = (List<UserDTO>)getServletContext().getAttribute("user-list");
-        List<UserDTO> userDTOs = (List<UserDTO>)session.getAttribute("user-list");
-        session.invalidate(); // a sample of working with sessions.
-        userDTOs.forEach(resp.getWriter()::println);
+        Object users = session.getAttribute("user-list");
+        List<UserDTO> userDTOs = users == null ? null : (List<UserDTO>)session.getAttribute("user-list");
+        //List<UserDTO> userDTOs = (List<UserDTO>)session.getAttribute("user-list");
+        //session.invalidate(); // a sample of working with sessions.
+        if (userDTOs!=null) userDTOs.forEach(resp.getWriter()::println);
     }
 }

@@ -12,6 +12,7 @@ public class LogFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
         log.info("request is coming from " + servletRequest.getRemoteAddr());
+        log.info("locale is " + servletRequest.getLocale());
         // you have to continue the chain.
         chain.doFilter(servletRequest, servletResponse);
     }
